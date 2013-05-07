@@ -1,0 +1,19 @@
+﻿
+.h { display:none;}
+.info { font-size:large; font-style:normal; color:white; padding: 6px; background-color:lightsteelblue;}
+.h12 {height:12px;}
+.h2 {height: 2px;}
+.h4 {height: 4px;}
+.h6 {height: 6px;}
+.h8 {height: 8px;}
+.pl5 { padding-left:5px;}
+.pl20 { padding-left:20px;}
+.p20 { padding: 20px;}
+td, th, table{ border: solid 1px gainsboro; padding: 5px;}
+table {border-collapse:collapse}
+th { background-color: gainsboro;}
+.table { display: table; width: 100%;  }
+.td-l{ display: table-cell; font-weight: normal; font-size: small; width:10% }
+.td { display: table-cell; font-weight: normal; font-size: small; padding-left: 4px;  }
+.tr { display: table-row;}
+

@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Pain Diary</title> 
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blue" />
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+    <link rel="stylesheet" href="@Url.Content("~/content/pmd.css")" />
+    </head> 
+    <body>
+    
+        <!-- Page 3 -->
+        <section id="AddIncident" data-role="page">
+            <div data-role="header" data-theme="b" >
+                <h1>Pain Diary</h1>
+                <a href="#Incidents" data-icon="gear" class="ui-btn-right">List</a>
+            </div>
+            <div data-role="content" >
+                <p class="info" id="Message" data-bind="visible: show">Incident Saved.</p>
+                <div>
+                <fieldset  data-role="controlgroup" data-type="horizontal" >
+                    <label for="select-choice-month">Month</label>
+                    <select name="select-choice-month" id="select-choice-month" data-bind="value: month">
+	                    <option value="1">Jan</option>
+	                    <option value="2">Feb</option>
+	                    <option value="3">Mar</option>
+	                    <option value="4">Apr</option>
+	                    <option value="5">May</option>
+	                    <option value="6">Jun</option>
+	                    <option value="7">Jul</option>
+	                    <option value="8">Aug</option>
+	                    <option value="9">Sep</option>
+	                    <option value="10">Oct</option>
+	                    <option value="11">Nov</option>
+	                    <option value="12">Dec</option>
+                    </select>
+	                <label for="select-choice-day">Day</label>
+                    <select name="select-choice-day" id="select-choice-day" data-bind="value : day">
+	                    <option value="1">1</option>
+	                    <option value="2">2</option>
+	                    <option value="3">3</option>
+	                    <option value="4">4</option>
+	                    <option value="5">5</option>
+	                    <option value="6">6</option>
+	                    <option value="7">7</option>
+	                    <option value="8">8</option>
+	                    <option value="9">9</option>
+	                    <option value="10">10</option>
+	                    <option value="11">11</option>
+	                    <option value="12">12</option>
+	                    <option value="13">13</option>
+	                    <option value="14">14</option>
+	                    <option value="15">15</option>
+	                    <option value="16">16</option>
+	                    <option value="17">17</option>
+	                    <option value="18">18</option>
+	                    <option value="19">19</option>
+	                    <option value="20">20</option>
+	                    <option value="21">21</option>
+	                    <option value="22">22</option>
+	                    <option value="23">23</option>
+	                    <option value="24">24</option>
+	                    <option value="25">25</option>
+	                    <option value="26">26</option>
+	                    <option value="27">27</option>
+	                    <option value="28">28</option>
+	                    <option value="29">29</option>
+	                    <option value="30">30</option>
+	                    <option value="31">31</option>
+                    </select>
+                    <label for="select-choice-year">Year</label>
+                    <select name="select-choice-year" id="select-choice-year" data-bind="value : year">
+	                    <option value="2000">2000</option>
+	                    <option value="2012">2012</option>
+	                    <option value="2013">2013</option>
+	                    <option value="2014">2014</option>
+	                    <option value="2015">2015</option>
+	                    <option value="2016">2016</option>
+                    </select>
+                    </fieldset>
+                </div>
+                <div>
+                <fieldset  data-role="controlgroup" data-type="horizontal" >
+                    <label for="select-choice-hour">Hour</label>
+                    <select name="select-choice-hour" id="select-choice-hour" data-bind="value : hour">
+	                    <option value="1">01</option>
+	                    <option value="2">02</option>
+	                    <option value="3">03</option>
+	                    <option value="4">04</option>
+	                    <option value="5">05</option>
+	                    <option value="6">06</option>
+	                    <option value="7">07</option>
+	                    <option value="8">08</option>
+	                    <option value="9">09</option>
+	                    <option value="10">10</option>
+	                    <option value="11">11</option>
+	                    <option value="12">12</option>
+                    </select>
+	                <label for="select-choice-minutes">Minutes</label>
+                    <select name="select-choice-minutes" id="select-choice-minutes" data-bind="value : minute">
+	                    <option value="1">00</option>
+	                    <option value="2">15</option>
+	                    <option value="3">30</option>
+	                    <option value="4">45</option>
+                    </select>
+                    <label for="select-choice-zone">Zone</label>
+                    <select name="select-choice-zone" id="select-choice-zone" data-bind="value : zone">
+	                    <option value="1">AM</option>
+	                    <option value="2">PM</option>
+                    </select>
+                </fieldset>
+                </div>
+               @* <fieldset data-role="controlgroup" data-mini="true" data-type="horizontal">
+                    <input type="radio" id="stomach" name="area" value="Stomach" data-bind="checked : area" />
+                    <label for="stomach">Stomach</label>
+                    <input type="radio" id="knee" name="area" value="Knee" data-bind="checked : area" />
+                    <label for="knee">Knee</label>
+                    <input type="radio" id="hip" name="area" value="Hip" data-bind="checked : area" />
+                    <label for="hip">Hip</label>
+                </fieldset>*@
+                @*<div class="h6"></div>*@
+                <fieldset data-role="controlgroup" data-mini="true" data-type="horizontal">
+                    <input type="checkbox" id="IsNausea" name="IsNausea" data-bind="checked : nausea" />
+                    <label for="IsNausea">Nausea</label>
+                    <input type="checkbox" id="IsSharp" name="IsSharp" data-bind="checked : sharp" />
+                    <label for="IsSharp">Sharp</label>
+                </fieldset>
+                <div class="h6"></div>
+                <label for="slider-step">Strength</label>
+                <input type="range" name="slider" data-highlight="true" id="slider-step" data-bind="value : strength" value="5" min="0" max="10" step="1" />
+                <label for="slider-step">Duration</label>
+                <input type="range" name="slider" data-highlight="true" id="slider-step" data-bind="value : duration" value="10" min="0" max="120" step="5" />
+                <div class="h2"></div>
+                <a href="#" id="Save" data-role="button" data-bind="click: add, css: { 'ui-disabled': !allowSave()}" >Save</a>
+            </div>
+        </section>
+        
+        <section id="Incidents" data-role="page">
+            <div data-role="header" data-theme="b" >
+                <h1>Pain Diary</h1>
+                <a href="#AddIncident" data-icon="arrow-l" class="ui-btn-left">Add</a>
+            </div>
+            <div data-role="content" >
+                <ul id="IncidentList" data-role="listview" data-theme="c"  data-inset="true" data-bind="foreach: list">
+                    <li>
+                        <a>
+                            <p><strong><span data-bind="text: date"></span>
+                                   <span data-bind="text: time"></span> 
+                                   <span style="width:60px;" class="ui-li-aside" data-bind="text: area"></span></strong>
+                            </p>    
+                            <div class="table">
+                                <div class="tr">
+                                    <div class="td-l">Duration:</div><div class="td"><b><span data-bind="text: duration"></span></b></div>
+                                    <div class="td-l">Strength:</div><div class="td"><b><span data-bind="text: strength"></span></b></div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td-l">Nausea:</div><div class="td"><b><span data-bind="text: nausea"></span></b></div>
+                                    <div class="td-l">Sharp:</div><div class="td"><b><span data-bind="text: sharp"></span></b></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" data-bind="attr:{id: id}" class="remove" data-icon="delete">Remove</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Dialog -->
+        <section id="MPDialog" data-role="page" class="h">
+            <div data-role="header" data-theme="b" >
+                <h1>Delete</h1>
+            </div>
+            <div data-role="content" >
+                <h3>Are you sure you want to delete?</h3>
+                <a href="#" id="ok" data-role="button">Ok</a>
+                <a href="#" data-role="button" data-rel="back">Cancel</a>
+            </div>
+        </section>
+
+        <!-- Error Dialog -->
+        <section id="MPError" data-role="page" class="h">
+            <div data-role="header" data-theme="b" >
+                <h1>Error</h1>
+            </div>
+            <div data-role="content" >
+                <h3>There was an error on the page.&nbsp;&nbsp;&nbsp;Please try again!</h3>
+                <a href="#" data-role="button" data-rel="back">Ok</a> 
+            </div>
+        </section>
+
+        <a href="#MPError" id="show-error-page" data-role="button" data-rel="dialog" data-transition="pop" style="display: none">Show error page</a>
+        <a href="#MPDialog" id="show-delete-page" data-role="button" data-rel="dialog" data-transition="pop" style="display: none">Show delete page</a>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.mobile.defaults.js")"></script>
+        <script type="text/javascript" src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/knockout-2.1.0.js")" ></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/pmd.js")" ></script>
+        <script type="text/javascript" src="@Url.Content("~/scripts/require.js")" data-main="main"></script>
+        <script type="script/javascript">
+            $(document).ready(function () {
+                $.mobile.showPageLoadingMsg();
+                window.pmd.initApp();
+                $.mobile.hidePageLoadingMsg();
+            });
+        </script>
+    </body>
+</html>
+ 

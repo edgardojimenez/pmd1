@@ -1,0 +1,58 @@
+﻿@model IEnumerable<PainManagementDiary.Models.PainIncident>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>All</title>
+    <link rel="stylesheet" href="@Url.Content("~/content/pmd.css")" />
+</head>
+    <body>
+        <a href="#AddIncident" data-icon="gear" class="ui-btn-right">[ Back ]</a>
+        <table>
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Duration
+                </th>
+                <th>
+                    With Sharp Pain
+                </th>
+                <th>
+                    With Nausea
+                </th>
+                <th>
+                    Strength
+                </th>
+            </tr>
+    
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IncidentDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Duration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WithSharpPain)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WithNausea)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Strength)
+                    </td>
+            
+                </tr>
+            }
+    
+        </table>
+    </body>
+</html>
